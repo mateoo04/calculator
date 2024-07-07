@@ -11,28 +11,32 @@
     <main>
         <div id="calculator">
             <div id="screen">
+                <p id="result">44</p>
             </div>
-            <div id="buttons">
-                <div id="operands">
+            <div id="top">
+                <button class="top-button clear" value="clear">C</button>
+                <button class="top-button delete" value="delete">DEL</button>
+            </div>
+            <div id="bottom">
                 <button value="7" class="operand">7</button>
                 <button value="8" class="operand">8</button>
                 <button value="9" class="operand">9</button>
-                <button value="4" class="operand">6</button>
+                <button class="operator" value="+">+</button>
+
+                <button value="4" class="operand">4</button>
                 <button value="5" class="operand">5</button>
-                <button value="6" class="operand">4</button>
-                <button value="1" class="operand">3</button>
+                <button value="6" class="operand">6</button>
+                <button class="operator" value="-">-</button>
+
+                <button value="1" class="operand">1</button>
                 <button value="2" class="operand">2</button>
-                <button value="3" class="operand">1</button>
+                <button value="3" class="operand">3</button>
+                <button class="operator" value="*">*</button>
+
                 <button value="0" class="operand">0</button>
                 <button value="." class="decimal">.</button>
-            </div>
-            <div id="operators">
-                <button class="operand" value="/">/</button>
-                <button class="operand" value="*">*</button>
-                <button class="operand" value="-">-</button>
-                <button class="operand" value="+">+</button>
-                <button class="operand" value="=">=</button>
-            </div>
+                <button class="operator equals" value="=">=</button>
+                <button class="operator" value="/">/</button>
             </div>
         </div>
     </main>
