@@ -1,4 +1,5 @@
 let firstNumber = 0, operator = '', secondNumber = 0;
+let displayValue;
 
 function add(a, b) {
     return a + b;
@@ -28,3 +29,14 @@ function operate(a, op, b) {
             return divide(a, b);
     }
 }
+
+const result = document.querySelector("#result");
+
+function numberClicked(num) {
+    console.log(num);
+}
+
+const operands = document.querySelectorAll(".operand");
+operands.forEach((item) => {
+    item.addEventListener('click', () => numberClicked(item.getAttribute("value")));
+});
