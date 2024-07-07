@@ -33,7 +33,18 @@ function operate(a, op, b) {
 const result = document.querySelector("#result");
 
 function display() {
+    let strDisplayValue = displayValue.toString();
+    let numOfDecimals = strDisplayValue.length - strDisplayValue.indexOf('.');
+
+    if (numOfDecimals > 5) {
+        displayValue = Number(displayValue.toFixed(5));
+    }
+
     result.textContent = displayValue;
+}
+
+function divisionByZero() {
+    result.textContent = "ERROR";
 }
 
 function numberClicked(num) {
@@ -76,7 +87,13 @@ operators.forEach((item) => {
                 operator = item.getAttribute("value");
             } else {
                 displayValue = operate(firstNumber, operator, secondNumber);
-                display();
+
+                if (secondNumber == 0) {
+                    divisionByZero();
+                    displayValue = 0;
+                }
+                else display();
+
                 firstNumber = displayValue;
                 operator = item.getAttribute("value");
                 secondNumber = 0;
@@ -89,7 +106,13 @@ const equals = document.querySelector(".equals");
 equals.addEventListener('click', () => {
     if (operator != '') {
         displayValue = operate(firstNumber, operator, secondNumber);
-        display();
+
+        if (secondNumber == 0) {
+            divisionByZero();
+            displayValue = 0;
+        }
+        else display();
+
         firstNumber = displayValue;
         operator = '';
         secondNumber = 0;
