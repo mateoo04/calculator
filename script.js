@@ -48,13 +48,20 @@ function display() {
     }
 
     if (strDisplayValue.length > 10) {
-        result.setAttribute('style', 'font-size: 0.7em')
+        result.setAttribute('style', 'font-size: 0.7em;')
     } else {
-        result.setAttribute('style', 'font-size: 1em')
+        result.setAttribute('style', 'font-size: 1em;')
     }
 
     if (decimalExponent == 0) {
         decimalButton.setAttribute('style', 'background-color: #fff;')
+    }
+
+    //Easter egg
+    if(strDisplayValue == '292004'){
+        result.setAttribute('style', 'font-size: 0.7em; color: #208aae;')
+        result.textContent = 'Made by MATEO';
+        return 0;
     }
 
     result.textContent = displayValue;
